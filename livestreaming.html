@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body
+        {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script>
+        function goBack() {
+            window.history.back()
+        }
+    </script>
+
+    <!--Accordian-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
+
+    <!--fade in-->
+    <script src="js\ingressGraph\jquery-1.7.2.js"></script>
+    <script src="js\ingressGraph\smoothie.js"></script>
+    <script src="js\ingressGraph\foresight-appbuilder-min-0.0.7.js"></script>
+    <script type="text/javascript" src="js\ingressGraph\jquery.gchart.js"></script>
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=".">AIE</a><a onclick="goBack()" style="cursor: pointer; font-family: inherit; color: #FFFFFF; text-decoration: none; position: absolute; padding: 15px 0 0 50px"><< Go Back</a>
+            </div>
+        </div>
+    </div>
+
+        <div class="container banner">
+            <h3>Sensor Live Streaming Dashboard</h3>
+        </div>
+
+    <div class="container content">
+        <div class="row">
+            <div id="sample"></div>
+            <label id="title"> Temperature Value: <span id="temperature"></span> </label><br>
+            <label id="sensor"> </label><br>
+            <canvas id="typedChart" width="600px" height="150px"></canvas>
+            </div>
+            <br />
+            <br />
+        </div>
+        <footer>
+            <p>&copy; Time Travelers 2013</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var stream00 = new TimeSeries();
+        var stream01 = new TimeSeries();
+        var stream02 = new TimeSeries();
+        initialize({key: "2d80af65-896a-4b6d-9a77-b939a309d402"
+           , secret: "3834f777-c66f-4afd-bcd6-aa2b64ad7fe6"
+           , aToken: "null" 
+           , apiHost: "foresight-demo-21591536.us-east-1.elb.amazonaws.com"}, function(err, streams){
+      if(streams){
+            streaming({id: "ipl_insurance::1::1::*", reconnect: true}, function(err, sData){
+          if(!err) {      
+            var temperature = sData.body[0].params.temperature.value;
+            var nodeid = sData.body[0].nodeid;
+            $("#sensor").text("Sensor : "+nodeid);
+           if(nodeid == "00"){
+             stream00.append(new Date().getTime(), temperature);}
+           if(nodeid == "01"){
+             stream01.append(new Date().getTime(), temperature);}
+           if(nodeid == "02"){
+             stream02.append(new Date().getTime(), temperature);}
+      $("#temperature").text(temperature);
+          }
+      else alert(JSON.stringify(err))
+        });
+  }else console.dir(err);
+  });
+var graphOptions = {  millisPerPixel:70, // Graph moving speed 
+                      labels:{precision:0}, //Label precission (i.e) 100.0, 100.00 
+                      grid:{strokeStyle:'transparent',sharpLines:true,fillStyle:'#B6B6B4'}, 
+                      labels:{fillStyle:'#000000'},
+                      minValue: 20, 
+                      maxValue: 40, 
+                      timestampFormatter:SmoothieChart.timeFormatter //Time-stamp
+                   }
+  var chartx = new SmoothieChart(graphOptions);
+  chartx.addTimeSeries(stream00, {lineWidth:3,strokeStyle:'#0020C2'});
+  chartx.addTimeSeries(stream01, {lineWidth:3,strokeStyle:'#8D0000'});
+  chartx.addTimeSeries(stream02, {lineWidth:3,strokeStyle:'#008000'});
+  chartx.streamTo(document.getElementById("typedChart"), 100);
+        var liveData = [$.gchart.series('Temp', [], 'red', 'ffffff')];
+        var liveAxis = $.gchart.axis('bottom', [], 'black');
+        var liveAxisY = $.gchart.axis('left', ['10', '20', '30', '40', '50', '60'], 'black');
+        function liveUpdate() {
+
+            var rotate = function (arr) {
+                var value = arr.shift();
+                arr.push(value);
+                return arr;
+            };
+            for (var i = 0; i < 1; i++) {
+                liveData[i].data = rotate(liveData[i].data);
+            }
+            liveAxis.labels(rotate(liveAxis.labels()));
+            /*$('#typedChart').gchart('option', { series: liveData, axes: [liveAxis, liveAxisY] });*/
+        }
+        var myArray = new Array();
+        var myArray1 = new Array();
+        var myYaxisArray = new Array();
+        var k;
+        var l;
+        var myRotate = function (data1) {
+            if (myArray.length > 4) {
+                myArray.splice(0, 1);
+            }
+            //var value = arr.shift(); 
+            myArray.push(data1);
+            return myArray;
+        };
+        var myRotate1 = function (data1) {
+            if (myArray1.length > 4) {
+                myArray1.splice(0, 1);
+            }
+
+            //var value = arr.shift(); 
+            myArray1.push(data1);
+            return myArray1;
+        };
+        var myRotateYaxis = function (data1) {
+            if (myYaxisArray.length > 4) {
+                myYaxisArray.splice(0, 1);
+            }
+
+            myYaxisArray.push(data1);
+
+
+            return myYaxisArray;
+        };
+
+        
+        function getMinute(unixTimestamp) {
+            var dt = new Date(unixTimestamp * 1000);
+
+            var hours = dt.getHours();
+            var minutes = dt.getMinutes();
+            var seconds = dt.getSeconds();
+            if (minutes < 10)
+                minutes = '0' + minutes;
+
+            return minutes;
+        }
+        function formatDateHour(timestamps) {
+            var hrs = timestamps.getHours();
+            suffex = (hrs >= 12) ? 'pm' : 'am';
+
+            //only -12 from hours if it is greater than 12 (if not back at mid night)
+            hrs = (hrs > 12) ? hrs - 12 : hrs;
+
+            //if 00 then it is 12 am
+            hrs = (hrs == '00') ? 12 : hrs;
+
+            var minut = (timestamps.getMinutes() < 10) ? "0" + timestamps.getMinutes() : timestamps.getMinutes();
+            var secnd = (timestamps.getSeconds() < 10) ? "0" + timestamps.getSeconds() : timestamps.getSeconds();
+
+            return hrs + ":" + minut + ":" + secnd + suffex;
+        }
+
+    </script>
+</body>
+</html>

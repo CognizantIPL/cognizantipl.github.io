@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="AIE">
+<head>
+    <meta charset="UTF-8">
+    <title>AIE Truck Tracker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-controller="AIETrucksController">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="insured.html">AIE </a><a onclick="" style="cursor: pointer; font-family: inherit; color: #FFFFFF; text-decoration: none; position: absolute; padding: 15px 0 0 50px"><< Go Back</a>
+				<a href="index.html" style="cursor:pointer; font-family:inherit; color:#FFFFFF; text-decoration:none; position:absolute; padding: 15px 0 0 150px">Log out</a>
+            </div>
+        </div>
+    </div>
+       <div  id="map_canvas" style="height: 1000px; width: 100%">
+    </div>
+  
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="js/service/MobileServices.Web-1.0.0.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-google-maps.js"></script>
+    <script src="js/angular/angular-resource.js"></script>
+    <script src="js/angular/app.js"></script>
+    <script src="js/angular/ExceptionHandler.js"></script>
+    <script src="js/angular/AIEmobileService.js"></script>
+    <script src="js/angular/Controller.js"></script>
+    <footer>
+        <p>&copy; Time Travelers 2013</p>
+    </footer>
+</body>
+
+</html>

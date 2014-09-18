@@ -1,0 +1,337 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 14">
+<link id=Main-File rel=Main-File href="../Boilers-Weibull_Final.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(1);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../Boilers-Weibull_Final.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1034 style='border-collapse:
+ collapse;table-layout:fixed;width:775pt'>
+ <col width=119 style='mso-width-source:userset;mso-width-alt:4238;width:89pt'>
+ <col width=180 style='mso-width-source:userset;mso-width-alt:6400;width:135pt'>
+ <col width=64 style='width:48pt'>
+ <col width=51 style='mso-width-source:userset;mso-width-alt:1820;width:38pt'>
+ <col width=78 style='mso-width-source:userset;mso-width-alt:2787;width:59pt'>
+ <col width=38 style='mso-width-source:userset;mso-width-alt:1365;width:29pt'>
+ <col width=98 style='mso-width-source:userset;mso-width-alt:3470;width:73pt'>
+ <col width=129 style='mso-width-source:userset;mso-width-alt:4579;width:97pt'>
+ <col width=175 style='mso-width-source:userset;mso-width-alt:6229;width:131pt'>
+ <col width=102 style='mso-width-source:userset;mso-width-alt:3612;width:76pt'>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl69 colspan=2 width=299 style='height:14.4pt;mso-ignore:
+  colspan;border-right:.5pt solid black;width:224pt'>Sample Centrifuges on which
+  sensors are attached</td>
+  <td width=64 style='width:48pt'></td>
+  <td colspan=7 class=xl149 width=671 style='width:503pt'>Centrifuges arranged in
+  ascending order of their maximum cycle to calculate Regression</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl71 style='height:14.4pt;border-top:none'>Centrifuges</td>
+  <td class=xl71 style='border-top:none;border-left:none'>Cycles To Failure</td>
+  <td></td>
+  <td class=xl71 style='border-top:none'>Centrifuges</td>
+  <td class=xl71 style='border-top:none;border-left:none'>Max Cycles</td>
+  <td class=xl71 style='border-top:none;border-left:none'>Rank</td>
+  <td class=xl71 style='border-top:none;border-left:none'>Median Ranks</td>
+  <td class=xl71 style='border-top:none;border-left:none'>1/(1-Median Rank)</td>
+  <td class=xl71 style='border-top:none;border-left:none'>ln(ln(1/(1-Median
+  Rank)))</td>
+  <td class=xl71 style='border-top:none;border-left:none'>ln(Max Cycles)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>A</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1239280</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>Q</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1029382</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.034313725</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.035532995</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-3.354802509</td>
+  <td class=xl66 style='border-top:none;border-left:none'>13.84446918</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>B</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2536128</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>A</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1239280</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.083333333</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.090909091</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-2.441716399</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.03004112</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>C</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1425362</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>M</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1271829</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.132352941</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.152542373</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-1.952137671</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.05596658</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>D</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3425162</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>C</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1425362</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.181372549</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.221556886</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-1.608807204</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.16993637</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>E</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1526345</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>E</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1526345</td>
+  <td class=xl66 style='border-top:none;border-left:none'>5</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.230392157</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.299363057</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-1.339891087</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.23838655</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>F</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1968467</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>O</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1526352</td>
+  <td class=xl66 style='border-top:none;border-left:none'>6</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.279411765</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.387755102</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-1.115695152</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.23839113</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>G</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2059382</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>S</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1827462</td>
+  <td class=xl66 style='border-top:none;border-left:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.328431373</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.489051095</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.920953918</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.41843868</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>H</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4514152</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>T</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1927847</td>
+  <td class=xl66 style='border-top:none;border-left:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.37745098</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.606299213</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.746689513</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.47191439</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>I</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2637261</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>F</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1968467</td>
+  <td class=xl66 style='border-top:none;border-left:none'>9</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.426470588</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.743589744</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.587084006</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.49276563</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>J</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3726172</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>G</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2059382</td>
+  <td class=xl66 style='border-top:none;border-left:none'>10</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.475490196</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.906542056</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.438053654</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.5379165</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>K</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2637261</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>B</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2536128</td>
+  <td class=xl66 style='border-top:none;border-left:none'>11</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.524509804</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2.103092784</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.296508894</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.74614907</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>L</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3920192</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>I</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2637261</td>
+  <td class=xl66 style='border-top:none;border-left:none'>12</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.573529412</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2.344827586</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.159920103</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.78525144</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>M</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1271829</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>K</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2637261</td>
+  <td class=xl66 style='border-top:none;border-left:none'>13</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.62254902</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2.649350649</td>
+  <td class=xl66 style='border-top:none;border-left:none'>-0.026021058</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14.78525144</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3425162</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>D</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3425162</td>
+  <td class=xl66 style='border-top:none;border-left:none'>14</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.671568627</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3.044776119</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.107442983</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.04665933</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>O</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1526352</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3425162</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.720588235</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3.578947368</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.24300008</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.04665933</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3526172</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3526172</td>
+  <td class=xl66 style='border-top:none;border-left:none'>16</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.769607843</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4.340425532</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.383882124</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.07572342</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>Q</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1029382</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>J</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3726172</td>
+  <td class=xl66 style='border-top:none;border-left:none'>17</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.818627451</td>
+  <td class=xl66 style='border-top:none;border-left:none'>5.513513514</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.534855821</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.13089199</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>R</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4029182</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>L</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3920192</td>
+  <td class=xl66 style='border-top:none;border-left:none'>18</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.867647059</td>
+  <td class=xl66 style='border-top:none;border-left:none'>7.555555556</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.704227134</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.18165119</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>S</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1827462</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>R</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4029182</td>
+  <td class=xl66 style='border-top:none;border-left:none'>19</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.916666667</td>
+  <td class=xl66 style='border-top:none;border-left:none'>12</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.910235093</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.20907394</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl66 style='height:14.4pt;border-top:none'>T</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1927847</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>H</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4514152</td>
+  <td class=xl66 style='border-top:none;border-left:none'>20</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0.965686275</td>
+  <td class=xl66 style='border-top:none;border-left:none'>29.14285714</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1.21556827</td>
+  <td class=xl66 style='border-top:none;border-left:none'>15.32272791</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=119 style='width:89pt'></td>
+  <td width=180 style='width:135pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=51 style='width:38pt'></td>
+  <td width=78 style='width:59pt'></td>
+  <td width=38 style='width:29pt'></td>
+  <td width=98 style='width:73pt'></td>
+  <td width=129 style='width:97pt'></td>
+  <td width=175 style='width:131pt'></td>
+  <td width=102 style='width:76pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

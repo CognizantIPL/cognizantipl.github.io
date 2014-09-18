@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <!--<script src="js\ingressGraph\incidentReader.js"></script> -->
+        <script src="js\ingressGraph\autoincidentReader.js"></script> 
+         <script>
+function goBack()
+ {
+ window.history.back()
+ }
+</script>
+        
+        <!--Accordian-->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script type="text/javascript" src="js\service\MobileServices.Web-1.0.0.min.js"></script>
+        <script>
+        $(function() {
+        $( "#accordion" ).accordion({
+        collapsible: true
+        });
+$( "#accordion_policy" ).accordion({
+        collapsible: true
+        });
+        });
+        </script>
+        <!--Accordian end-->
+        
+        
+        <!--Map start-->
+<style type="text/css">
+          html { height: 100% }
+          body { height: 100%; margin: 0; padding: 0 }
+ #map-canvas { height: 50%; width: 100% }
+        </style>
+        <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhH6Hhd-_6dUMA_tP0VK90R8skSKQvY8g&sensor=true">
+        </script>
+        <script type="text/javascript">
+function initializeMap(lat, longitude) {
+  var myLatlng = new google.maps.LatLng(lat,longitude);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+ 
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Incident Location'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+}
+
+$( document ).ready(function() {
+  // Handler for .ready() called.
+  var vehicleNo = document.URL.split('vehicleNo=')[1];
+  $('#alertBar').text('Truck '+ vehicleNo + ' has reported an accident!');
+});
+
+
+        </script>
+
+    <!--Map end-->
+
+
+    </head>
+    <body onload="readIncidentTable();">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="insured.html">AIE</a><a onClick="goBack()" style="cursor:pointer; font-family:inherit; color:#FFFFFF; text-decoration:none; position:absolute; padding: 15px 0 0 50px"><< Go Back</a>
+		  <a href="index.html" style="cursor:pointer; font-family:inherit; color:#FFFFFF; text-decoration:none; position:absolute; padding: 15px 0 0 150px">Log out</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="padding-top: 40px">
+      <div class="container">
+        <h2>Crash Report</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <form>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Alert Center</h2>
+          <p class="alert alert-danger" ><img src="img/cross.png"  width="50" height="50" ><span id="alertBar">Truck has a emergency</span></p>
+         
+        </div>
+        <div class="col-lg-4">
+          <h2>Alert</h2>
+      <div id="accordion">
+        <h3>Crash Report</h3>
+			<div>
+<table>
+ <tr>
+<td><b>Truck Number </b> </td>
+<td id="trucknumber" value=""> </td>
+ </tr>
+ <tr>
+<td><b>Message  </b></td>
+<td id="message" value=""> </td>
+ </tr>
+ <tr>
+ <tr>
+<td><b>Vehicle Speed  </b></td>
+<td id="speed" value=""> </td>
+ </tr>
+ <tr>
+<td><b>Vehicle Condition  </b></td>
+<td id="vehicle_condition" value="">Front Wheel Axle Damaged</td>
+ </tr>
+ <tr>
+<td><b>Vehicle Drivable ? </b></td>
+<td id="vehicle_condition" value="">Not Drivable</td>
+ </tr>
+<td><b>Latitude  </b></td>
+<td id="latitude" value=""> </td>
+ </tr>
+ <tr>
+<td><b>Longitude  </b></td>
+<td id="longitude" value=""> </td>
+ </tr>
+ <tr>
+<td><b>Address  </b></td>
+<td id="address" value=""> </td>
+ </tr>
+</table>
+</div>
+
+<h3>Contacts</h3>
+		<div id='contact_details'>
+		<table>
+			<tr>
+				<td><b>Driver</b></td>
+				<td id="address" value=""> <a href="tel:+(860)-818-9877" style="color:blue">Call Ron</a> </td>
+			</tr>
+			<tr>
+				<td><b>Emergency Services</b></td>
+				<td id="address" value=""> <a href="tel:+911" style="color:blue">Call 911</a> </td>
+			</tr>
+			<tr>
+				<td><b>Omega Insurance help line</b></td>
+				<td id="address" value=""> <a href="tel:+1-800-277-1234" style="color:blue">Call</a> </td>
+			</tr>
+			<tr>
+				<td><b>Omega Insurance Account Rep</b></td>
+				<td id="address" value=""> <a href="tel:+(860)-818-6754" style="color:blue">Call Sue</a></td>
+			</tr>
+		</table>
+		</div>
+        </div>
+ <div id="accordion_policy">
+        <h3>Policy Information</h3>
+<div>
+<table>
+ <tr>
+<td><b>Policy Number </b> </td>
+<td id="policyNumber" value="80-1209873999"> 80-1209873999</td>
+ </tr>
+ <tr>
+<td><b>Policy Effective Date  </b></td>
+<td id="polcyEffectiveDate" value="May 1st 2011 12:01AM">May 1st 2011 12:01AM </td>
+ </tr>
+ <tr>
+<td><b>Polciy Expiration Date  </b></td>
+<td id="policyExpiration" value="May 1st 2016 12:01AM"> May 1st 2016 12:01AM</td>
+ </tr>
+ <tr>
+<td><b>Coverages  </b></td>
+<td id="policyCoverages" value="Property,Equipment,Auto,Workers Compensation">Property,Equipment,Auto,Workers Compensation </td>
+ </tr>
+ <tr>
+<td><b>Exclusions  </b></td>
+<td id="exclusions" value="Goods in transit for Hazardous Materials">Goods in transit for Hazardous Materials </td>
+ </tr>
+ <tr>
+<td><b>Claim Number  </b></td>
+<td id="claimNumber" value="AAJ0100"> AAJ0100</td>
+ </tr>
+</table>
+</div>
+        </div>
+ 
+ 
+       </div>
+      </div>
+      <input type="hidden" id="veh_id" value=""/>
+      <input type="hidden" id="channel" value=""/>
+ <br/>
+ <br/>
+      <div style="position:relative; ">
+ 
+      <input type="button" value="Request a Claim" id="request" onClick="handleClaim(this.id)"/>
+      <input type="button" value="Cancel Incident" id="cancel" onClick="handleClaim(this.id)"/>
+      <input type="button" value="Process the Claim" id="process" onClick="handleClaim(this.id)"/>
+      <input type="button" value="Reject" id="reject" onClick="handleClaim(this.id)"/>
+    </div><br/><br/><br/><br/>
+  </form>
+      <div class="row">
+ 
+      
+      </div>
+    </div> <!-- /container -->      
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <!--<script src="js/main.js"></script>-->
+
+        <script>
+          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+<!--Google Map start-->
+<div ><h2>Accident Location <span id='truck_header'>and Third Party Towing and Trucking information</span></h2></div>
+        <div id="map-canvas" style="width:48%;float:left;"></div>
+        <img src="img/Truck_tow.jpg" id="tow_truck" style="width:48%;align:right;float:right;"/>
+  <!--Google Map start-->
+            
+      <footer>
+        
+      </footer>
+    </body>
+</html>

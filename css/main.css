@@ -1,0 +1,42 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*CSS FOR MAP*/
+
+/***Equipment tab START */
+.banner
+{
+    background-color: #eee;
+    padding-left:2em;
+}
+
+.content
+{
+    padding-left: 2em;
+    margin: 1em 1em;
+}
+
+.list-group-small
+{
+    width:35%;
+}
+
+.buffer {
+    padding-left: 20px;
+}
+
+.excelHome {
+    margin: 0.5em;
+    padding: 0.5em;
+    color: #000;
+}
+
+.excelHome a {
+    
+}
+/***Equipment tab END */
+
+

@@ -1,0 +1,210 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 14">
+<link id=Main-File rel=Main-File href="../HPCC_Data_Load_V1.5.2.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(1);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../HPCC_Data_Load_V1.5.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple class=xl90>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1216 style='border-collapse:
+ collapse;table-layout:fixed;width:912pt'>
+ <col class=xl90 width=64 span=19 style='width:48pt'>
+ <tr height=19 style='mso-height-source:userset;height:14.4pt'>
+  <td colspan=9 rowspan=22 height=419 class=xl209 width=576 style='border-right:
+  1.0pt solid black;border-bottom:1.0pt solid black;height:317.4pt;width:432pt'><font
+  class="font21">Altman Z-Score (Bankruptcy Formula)</font><font class="font19"><br>
+    </font><font class="font20">The Altman Z-Score is an analytical
+  representation created by Edward Altman in the 1960s which involves a
+  combination of five distinctive financial ratios used for determining the
+  odds of bankruptcy amongst companies. Most commonly, a lower score reflects
+  higher odds of bankruptcy.<br>
+    <br>
+    </font><font class="font22">Formula for Z-Score</font><font class="font20"><br>
+    The Z-Score can be characterized as a linear combination of 4-5 common
+  business ratios. These ratios are weighted by coefficients which are
+  estimated by spotting a set of firms which had declared a bankruptcy.
+  Thereafter, a matched sample of firms is collected for the surviving firms,
+  with matching by industry and estimated assets. The formula for Z-Score and
+  prediction of bankruptcy was given by Edward I. Altman in 1968. This formula
+  for Altman Z-Score is helpful in calculating and predicting the probability
+  that a company will go into bankruptcy within two years.<br>
+    </font><font class="font22">5-factor model of the Altman Z-score (a for
+  private manufacturing firms):</font><font class="font20"><br>
+    Z-score = 0.717T1 + 0.847T2 + 3.107T3 + 0.42T4 + 0.998T5<br>
+    where,<br>
+    T1 = Working Capital / Total Assets <br>
+    T2 = Retained Earnings / Total Assets <br>
+    T3 = Earnings Before Interest and Taxes / Total Assets <br>
+    T4 = Equity / Total Liabilities <br>
+    T5 = Sales / Total Assets<br>
+    </font><font class="font23">Zones of Discrimination:<br>
+    1.23 or less – “Distress” Zone<br>
+    from 1.23 to 2.9 – “Grey” Zone<br>
+    2.9 or more – “Safe” Zone</font></td>
+  <td class=xl90 width=64 style='width:48pt'>&nbsp;</td>
+  <td colspan=9 rowspan=22 class=xl226 width=576 style='border-right:1.0pt solid black;
+  border-bottom:1.0pt solid black;width:432pt'>Calculation of LifeVac's
+  Bankruptcy score) [<font class="font26"> gathered from Publically available
+  sources</font><font class="font25">]<br>
+    <br>
+    </font><font class="font0">Working Capital = </font><font class="font27">$3,434,964</font><font
+  class="font0">, Total Assets = </font><font class="font27">$4,814,294,</font><font
+  class="font0"> Retained Earnings = </font><font class="font27">$4,633,789</font><font
+  class="font0"><br>
+    Earnings Before Interest and Taxes = </font><font class="font27">$1,387,596</font><font
+  class="font0">, Equity = </font><font class="font27">$4,854,383</font><font
+  class="font0">, Sales = </font><font class="font27">$7,346,472</font><font
+  class="font0"><br>
+    Total Liabilities = </font><font class="font27">$1,514,715<br>
+    <br>
+    </font><font class="font14">Calculations-<br>
+    <br>
+    T1 = </font><font class="font24">$3,434,964 / $4,814,294<span
+  style='mso-spacerun:yes'>      </span>=</font><font class="font14"><span
+  style='mso-spacerun:yes'>  </span>0.713<br>
+    T2 = </font><font class="font24">$4,633,789 / $4,814,294<span
+  style='mso-spacerun:yes'>      </span>=<span style='mso-spacerun:yes'> 
+  </span>0.962</font><font class="font14"><br>
+    T3 = </font><font class="font24">$1,387,596 / $4,814,294<span
+  style='mso-spacerun:yes'>      </span>=<span style='mso-spacerun:yes'> 
+  </span>0.288</font><font class="font14"><br>
+    T4 = </font><font class="font24">$4,854,383 / $1,514,715<span
+  style='mso-spacerun:yes'>      </span>=</font><font class="font14">
+  3.204<br>
+    T5 = </font><font class="font24">$7,346,472 / $4,814,294<span
+  style='mso-spacerun:yes'>       </span>= 1.525<br>
+    <br>
+    Z-Score = 0.717(0.713) + 0.847(0.962) + 3.107(0.288) + 0.42(3.204) +
+  0.998(1.525)<br>
+    <br>
+    LifeVac's Z-Score = </font><font class="font28">5.088 [Safe Zone]</font></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl90 style='height:14.4pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl90 style='height:15.0pt'>&nbsp;</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

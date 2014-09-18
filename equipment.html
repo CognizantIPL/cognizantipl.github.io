@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+         <script>
+      function goBack()
+        {
+        window.history.back()
+        }
+    </script>
+        
+        <!--Accordian-->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+        //$(function() {
+        //$( "#accordion" ).accordion({
+        //collapsible: true
+        //});
+        //});
+        </script>
+        <!--Accordian end-->
+        
+        <!--tooltip-->
+         <script>
+    $(function() {
+    $( document ).tooltip();
+    });
+    </script>
+        
+        <!--fade in-->
+  <script src="js\ingressGraph\jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="js\ingressGraph\jquery.gchart.js"></script>
+        <script type="text/javascript" src="js\service\MobileServices.Web-1.0.0.min.js"></script>
+    <script src="js\ingressGraph\foresight-appbuilder-min-0.0.7.js">
+  </script>
+    <script src="js\ingressGraph\ingressGraph.js"></script>
+    <script src="js\ingressGraph\incidentReader.js"></script> 
+    <script>
+     
+     
+    
+    </script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="insured.html">AIE</a>
+          <ul class="nav navbar-nav">
+            <li><a href="insured.html">Back</a></li>
+            <li><a href="index.html">Log Out</a></li>
+          </ul>    
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="container banner">
+        <h2>Equipment Real Time Risk Dashboard</h2>(<a href="Weibull_distrbn.htm">View Machine Failure Prediction Details</a>)
+      </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      <!--accordian-->
+  
+      
+      <!--Image of the property-->
+      
+      <div class="col-lg-4" id="normId">
+          <h3>Alert Center </h3>
+          <p><div class="alert alert-success"><img src="img/tick.png" style="float:left" width="50" height="50">All sensors across all insured locations  are reporting optimal conditions. </div></p>
+        </div>
+        <div class="col-lg-4" id="errId" style="display:none">
+          <h3>Equipment </h3>
+           <input type="button" id="alertbox" style="display:none"></input>
+           
+          <p><div class="alert alert-warning"><img src="img/symbols-warning.png" style="float:left" width="50" height="50"> <div class="quip"></div></div><p><a class="btn btn-default" onclick="resolveThis();">Resolve Incident &raquo;</a></p></p>
+       </div>
+      
+       <!-- <div class="col-lg-4">
+          <h2></h2>
+          <img id="warningbox" src="img/tick.png" style="float:left" width="40" height="40">
+         
+          <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                  <span class="sr-only">40% Operational</span>
+              </div>
+          </div>
+          
+            </div>-->
+          <div class="col-lg-3">
+              <h3>Equipment Summary</h3>
+              <ul class="list-group">
+                  <li class="list-group-item">Year Date: 1st Jan 1995</li>
+                  <li class="list-group-item">Model : APL12345t</li>
+                  <li class="list-group-item">OClass : High Speed</li>
+                  <li  class="list-group-item">Operating load: 1500RPM </li>
+                  <li class="list-group-item">Energy Source : Primary- Electricity, Secondary â€“ Diesel</li>
+                  <li  class="list-group-item">Standard Operating Temperature: 75*F</li>
+              </ul>
+          </div>
+          <div class="col-lg-3">
+              <h3>Equipment Status</h3>
+              <!--Image-->
+              <img src="img/equipments.jpg" usemap="#prop_details" style="border-width:thin; border-style:solid; border-color:#9999FF; border-radius:5px; margin-left:17px"/>
+              <map name="prop_details">
+                  <area onClick="showDiv('temp')" id="clickme"  shape="circle" coords="153,105,20" alt="temp">
+                  <area onClick="showDiv('curr')"  shape="circle" coords="222,99,17" alt="curr">
+                  <area onClick="showDiv('tims')"  shape="circle" coords="187,106,15" alt="tims">
+        
+                  <area onClick="showDiv('temp')"  shape="circle" coords="23,220,20" alt="temp">
+                  <area onClick="showDiv('curr')"  shape="circle" coords="91,221,17" alt="curr">
+                  <area onClick="showDiv('tims')"  shape="circle" coords="60,217,15" alt="tims">
+
+                  <area onClick="showDiv('temp')"  shape="circle" coords="153,216,20" alt="temp">
+                  <area onClick="showDiv('curr')"  shape="circle" coords="219,220,17" alt="curr">
+                  <area onClick="showDiv('tims')"  shape="circle" coords="188,215,15" alt="tims">
+
+                  <area onClick="showDiv('temp')"  shape="circle" coords="285,101,20" alt="temp">
+                  <area onClick="showDiv('curr')"  shape="circle" coords="349,106,17" alt="curr">
+                  <area onClick="showDiv('tims')"  shape="circle" coords="318,106,15" alt="tims">
+        
+                  <area onClick="showDiv('temp')"  shape="circle" coords="25,104,20" alt="temp">
+                  <area onClick="showDiv('curr')"  shape="circle" coords="93,103,17" alt="curr">
+                  <area onClick="showDiv('tims')"  shape="circle" coords="60,103,15" alt="tims">
+        
+              </map> 
+                    
+          </div>
+      </div>
+
+
+      <div class="row">
+
+              <div class="col-lg-4">
+          
+          <p>
+        <script>
+        function showDiv(choice) {
+          if (choice == 'temp')
+          {
+          div = document.getElementById('dflt');
+          div.style.display = "none"; 
+          div = document.getElementById('tims');
+          div.style.display = "none";
+          div = document.getElementById('curr');
+          div.style.display = "none";
+          div = document.getElementById('temp');
+          div.style.display = "block";
+          }
+          if (choice == 'curr')
+          {
+          div = document.getElementById('dflt');
+          div.style.display = "none"; 
+          div = document.getElementById('temp');
+          div.style.display = "none";
+          div = document.getElementById('tims');
+          div.style.display = "none";
+          div = document.getElementById('curr');
+          div.style.display = "block";            
+          }
+          if (choice == 'tims')
+          {
+          div = document.getElementById('dflt');
+          div.style.display = "none"; 
+          div = document.getElementById('curr');
+          div.style.display = "none";
+          div = document.getElementById('temp');
+          div.style.display = "none";
+          div = document.getElementById('tims');
+          div.style.display = "block";              
+          }
+        }
+      </script>
+          <div id="temp" style="display:none">
+                <div class="list-group">
+                  <a class="list-group-item active">
+                    Name of the Sensor: Temperature Sensor
+                  </a>
+                  <a class="list-group-item">Device Id: T1234567890</a>
+                  <a class="list-group-item">Device IPV6: 192.169.9.9</a>
+                  <a class="list-group-item"><div id="lastReading">Last Reading: 75.44*F as 09/24/2013 21:00</div></a>
+                  <a class="list-group-item">Range for the Day: 74.5*F- 76.5*F</a>
+                  <a class="list-group-item">Average for the Day: 75.5*F</a>
+                </div>
+          </div>
+           <div id="curr" style="display:none">
+               <div class="list-group">
+                  <a class="list-group-item active">
+                    Machine Life Data
+                  </a>
+              <img src="img/Machine_Life.jpg">
+                   </div>
+          </div>
+          <div id="tims" style="display:none">
+              <div class="list-group-small">
+                  <a class="list-group-item active">
+                    Live Streaming
+                  </a>
+            </div>
+        <div id="sample"></div>
+        <div id="typedChart" style="width: 450px; height: 300px;"></div>
+                 
+          <div id="dflt"></div>
+        </p>
+        </div>
+                
+          <div>
+            <a href="livestreaming.html" target="_blank">Realtime sensor data</a>
+           </div>
+
+          <div id="myGraph" class="row buffer">
+      <h3>History Data:</h3>
+      <div id="histTime"></div>
+       <div id="hisChart" style="width: 450px; height: 300px;">
+      
+       </div>
+     </div>
+    <div id="accordion" class="row buffer">
+      <h3 >Property Information</h3>
+        <h4>Location</h4>
+        <div>
+        <p>147 John Olds drive, Schenectady NY   </p>
+        </div>
+        <h4>Property Code</h4>
+        <div>
+        <p>: US.NY.JEP.789     </p>
+        </div>
+        <h4>Plant Manager</h4>
+        <div>
+        <p>Steve M (201 456 7890)</p>
+        </div>
+        <h4>Property Insured By</h4>
+        <div>
+        <p>Omega Insurance   </p>
+        </div>
+        <h4>Policy Number</h4>
+        <div>
+        <p>P1234567    </p>
+        </div>
+        <h4>Insurance Broker</h4>
+        <div>
+        <p>Sue Stanson (201 456 8900)</p>
+        </div>
+     </div>
+       
+    </div>
+      <hr>
+
+    </div> <!-- /container -->      
+      <footer>
+        <p>&copy; Time Travelers 2013</p>
+      </footer>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <!--<script src="js/main.js"></script>-->
+
+        <script>
+          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

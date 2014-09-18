@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+         <script>
+			function goBack()
+			  {
+			  window.history.back()
+			  }
+		</script>
+		
+
+        
+        <!--Gauge-->
+		    <link rel="stylesheet" href="jqwidgets/jqx.base.css" type="text/css" />
+		    
+		    <link rel="stylesheet" href="jqwidgets/jqx.windowsphone.css" type="text/css" />
+		    <link rel="stylesheet" href="jqwidgets/jqx.blackberry.css" type="text/css" />
+		    <link rel="stylesheet" href="jqwidgets/jqx.android.css" type="text/css" />
+		    <link rel="stylesheet" href="jqwidgets/jqx.mobile.css" type="text/css" />
+		    <link rel="stylesheet" href="jqwidgets/jqx.fresh.css" type="text/css" />	
+		    <link rel="stylesheet" href="jqwidgets/jqx.web.css" type="text/css" />
+    		<script type="text/javascript" src="jqwidgets/simulator.js"></script>
+    		
+		    <script type="text/javascript" src="jqwidgets/jquery-1.10.2.min.js"></script>
+		    
+
+		    
+		    <script type="text/javascript" src="jqwidgets/gettheme.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxchart.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxgauge.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxradiobutton.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxexpander.js"></script>
+		    <script type="text/javascript" src="jqwidgets/jqxtabs.js"></script>      
+		    
+		    <script type="text/javascript">
+		    /*gaugeContainer1*/
+		        $(document).ready(function () {
+		            $('#gaugeContainer1').jqxGauge({
+		                ranges: [{ startValue: 0, endValue: 25, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
+		                         { startValue: 25, endValue: 50, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
+		                         { startValue: 50, endValue: 75, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+		                         { startValue: 75, endValue: 100, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }],
+		                max:100,
+		                width:200,
+		                height:200,
+		                ticksMinor: { interval: 5, size: '5%' },
+		                ticksMajor: { interval: 10, size: '9%' },
+		                value: 0,
+		                caption: { offset: [0, -25], value: 'Bankruptcy', position: 'bottom' },
+		                colorScheme: 'scheme05',
+		                animationDuration: 3600
+		            });
+		
+		            $('#gaugeContainer1').on('valueChanging', function (e) {
+		                $('#gaugeValue').text(Math.round(e.args.value) + ' kph');
+		            });
+		
+		            $('#gaugeContainer1').jqxGauge('value', 30);/*<-- this would need the variable from database*/
+		            
+		            
+		                      
+
+		        });
+		    /*/gaugeContainer1*/     
+		        
+		    /*gaugeContainer2*/
+		   
+		        $(document).ready(function () {
+		            $('#gaugeContainer2').jqxGauge({
+		                ranges: [{ startValue: 0, endValue: 25, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
+		                         { startValue: 25, endValue: 50, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
+		                         { startValue: 50, endValue: 75, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+		                         { startValue: 75, endValue: 100, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }],
+		                max:100,
+		                width:200,
+		                height:200,
+		                ticksMinor: { interval: 5, size: '5%' },
+		                ticksMajor: { interval: 10, size: '9%' },
+		                value: 0,
+		                caption: { offset: [0, -25], value: 'P & E', position: 'bottom' },
+		                colorScheme: 'scheme05',
+		                animationDuration: 3600
+		            });
+		
+		            $('#gaugeContainer2').on('valueChanging', function (e) {
+		                $('#gaugeValue').text(Math.round(e.args.value) + ' kph');
+		            });
+		
+		            $('#gaugeContainer2').jqxGauge('value', 20);/*<-- this would need the variable from database*/
+
+		        });		    
+		       
+		    /*/gaugeContainer2*/
+		   
+		    /*gaugeContainer3*/
+		   
+		        $(document).ready(function () {
+		            $('#gaugeContainer3').jqxGauge({
+		                ranges: [{ startValue: 0, endValue: 25, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
+		                         { startValue: 25, endValue: 50, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
+		                         { startValue: 50, endValue: 75, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+		                         { startValue: 75, endValue: 100, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }],
+		                max:100,
+		                width:200,
+		                height:200,
+		                ticksMinor: { interval: 5, size: '5%' },
+		                ticksMajor: { interval: 10, size: '9%' },
+		                value: 0,
+		                caption: { offset: [0, -25], value: 'Auto', position: 'bottom' },
+		                colorScheme: 'scheme05',
+		                animationDuration: 3600
+		            });
+		
+		            $('#gaugeContainer3').on('valueChanging', function (e) {
+		                $('#gaugeValue').text(Math.round(e.args.value) + ' kph');
+		            });
+		
+		            $('#gaugeContainer3').jqxGauge('value', 10);/*<-- this would need the variable from database*/
+
+		        });		    
+		       
+		    /*/gaugeContainer3*/  
+		      
+		    /*gaugeContainer4*/
+		   
+		        $(document).ready(function () {
+		            $('#gaugeContainer4').jqxGauge({
+		                ranges: [{ startValue: 0, endValue: 25, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
+		                         { startValue: 25, endValue: 50, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
+		                         { startValue: 50, endValue: 75, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+		                         { startValue: 75, endValue: 100, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }],
+		                max:100,
+		                width:200,
+		                height:200,
+		                ticksMinor: { interval: 5, size: '5%' },
+		                ticksMajor: { interval: 10, size: '9%' },
+		                value: 0,
+		                caption: { offset: [0, -25], value: 'WC', position: 'bottom' },
+		                colorScheme: 'scheme05',
+		                animationDuration: 3600
+		            });
+		
+		            $('#gaugeContainer4').on('valueChanging', function (e) {
+		                $('#gaugeValue').text(Math.round(e.args.value) + ' kph');
+		            });
+		
+		            $('#gaugeContainer4').jqxGauge('value', 30);/*<-- this would need the variable from database*/
+
+		        });		    
+		       
+		    /*/gaugeContainer4*/  
+	    		      
+		      
+    		</script>		
+		      
+        <!--/Gauge-->
+       
+       
+        <!--Graph1-Score Patterns Across Categories-->
+		    <script type="text/javascript">
+		        $(document).ready(function () {
+				
+		            // prepare chart data
+		            var  sampleData = [
+		                    { Day:'P&E', Total:160, Obtained:89.60},
+		                    { Day:'WC', Total:240, Obtained:140.80},
+		                    { Day:'Auto', Total:80, Obtained:37.33},
+		                    { Day:'Financial', Total:240, Obtained:144.00},
+		                    { Day:'Rating', Total:80, Obtained:56.00}
+		                ];
+						
+		            // prepare jqxChart settings
+		            var settings = {
+		                title: "Score Patterns across categories",
+		                description: " ",
+		                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+		                titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+		                source: sampleData,
+		                categoryAxis:
+		                    {
+		                        dataField: 'Day',
+		                        showGridLines: false
+		                    },
+		                colorScheme: 'scheme01',
+		                animationDuration: 5000,
+		                seriesGroups:
+		                    [
+		                        {
+		                            type: 'line',
+		                            columnsGapPercent: 30,
+		                            seriesGapPercent: 0,
+		                            valueAxis:
+		                            {
+		                                minValue: 0,
+		                                maxValue: 300,
+		                                unitInterval: 50,
+		                                description: 'Score'
+		                            },
+		                            series: [
+		                                    { dataField: 'Total', displayText: 'Total'},
+		                                    { dataField: 'Obtained', displayText: 'Obtained'},
+		                                ]
+		                        }
+		                    ]
+		            };
+		            
+		            // select the chartContainer DIV element and render the chart.
+		            $('#chartContainer').jqxChart(settings);
+		        });
+		    </script>
+		<!--/Graph1-Score Patterns Across Categories-->    
+		
+		<!--Tabs-->
+		    <script type="text/javascript">
+		        $(document).ready(function () {
+		            // create jqxtabs.
+		            $('#jqxtabs').jqxTabs({ width: 750, height: 100, theme: 'web' });
+		        });
+		    </script>		
+		<!--/Tabs-->
+		
+        <!--Graph2-Sensor Data-->
+		    <script type="text/javascript">
+		        $(document).ready(function () {
+				
+		            // prepare chart data
+		            var  sampleData = [
+		                    { Day:'Temp-FZ', NY:25, Raleigh:69, Hartford:5},
+		                    { Day:'Temp-SZ', NY:25, Raleigh:31, Hartford:5},
+		                    { Day:'Pressure-FZ', NY:23, Raleigh:53, Hartford:6},
+		                    { Day:'Pressure-SZ', NY:27, Raleigh:47, Hartford:4},
+		                    { Day:'RPM-FZ', NY:14, Raleigh:28, Hartford:3},
+		                    { Day:'RPM-SZ', NY:36, Raleigh:72, Hartford:7}
+		                ];
+						
+		            // prepare jqxChart settings
+		            var settings = {
+		                title: "Sensor Data Analysis",
+		                description: " ",
+		                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+		                titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+		                source: sampleData,
+		                categoryAxis:
+		                    {
+		                        dataField: 'Day',
+		                        showGridLines: false
+		                    },
+		                colorScheme: 'scheme01',
+		                animationDuration: 7000,
+		                seriesGroups:
+		                    [
+		                        {
+		                            type: 'column',
+		                            columnsGapPercent: 30,
+		                            seriesGapPercent: 0,
+		                            valueAxis:
+		                            {
+		                                minValue: 0,
+		                                maxValue: 80,
+		                                unitInterval: 20,
+		                                description: 'Temperature'
+		                            },
+		                            series: [
+		                                    { dataField: 'NY', displayText: 'NY'},
+		                                    { dataField: 'Raleigh', displayText: 'Raleigh'},
+		                                    { dataField: 'Hartford', displayText: 'Hartford'},
+		                                ]
+		                        }
+		                    ]
+		            };
+		            
+		            // select the chartContainer DIV element and render the chart.
+		            $('#chartContainer2').jqxChart(settings);
+		        });
+		    </script>
+		<!--/Graph2-Sensor Data-->   		
+
+        <!--Graph3-Incident Data-->
+		    <script type="text/javascript">
+		        $(document).ready(function () {
+				
+		            // prepare chart data
+		            var  sampleData = [
+		                    { Day:'Property & Equipment', Avoidable_Incident:1, Unavoidable_Incident:2},
+		                    { Day:'Workers Compensation', Avoidable_Incident:5, Unavoidable_Incident:3},
+		                    { Day:'Commercial Auto', Avoidable_Incident:2, Unavoidable_Incident:8}
+		                    
+		                ];
+						
+		            // prepare jqxChart settings
+		            var settings = {
+		                title: "Incident Analysis - 1 year",
+		                description: " ",
+		                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+		                titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+		                source: sampleData,
+		                categoryAxis:
+		                    {
+		                        dataField: 'Day',
+		                        showGridLines: false
+		                    },
+		                colorScheme: 'scheme05',
+		                animationDuration: 7000,
+		                seriesGroups:
+		                    [
+		                        {
+		                            type: 'stackedcolumn',
+		                            columnsGapPercent: 30,
+		                            seriesGapPercent: 0,
+		                            valueAxis:
+		                            {
+		                                minValue: 0,
+		                                maxValue: 25,
+		                                unitInterval: 5,
+		                                description: 'Count'
+		                            },
+		                            series: [
+		                                    { dataField: 'Avoidable_Incident', displayText: 'Avoidable_Incident'},
+		                                    { dataField: 'Unavoidable_Incident', displayText: 'Unavoidable_Incident'}
+		                                ]
+		                        }
+		                    ]
+		            };
+		            
+		            // select the chartContainer DIV element and render the chart.
+		            $('#chartContainer3').jqxChart(settings);
+		        });
+		    </script>
+		<!--/Graph3-Incident Data-->  		
+		        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="agent.html">AIE</a>
+          
+          <ul class="nav navbar-nav">
+            <li><a href="agent.html">Back</a></li>
+            <li><a href="index.html">Log Out</a></li>
+          </ul>          
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Risk Dashboard</h2>(<a href="risk_details.html">View Risk Details</a>)
+      </div>
+    </div>
+
+    <div class="container" >
+     <div class="panel panel-primary" style="width: 810px">
+	     <div class="panel-heading">
+	     <h3 class="panel-title" style="padding-bottom: 7px"><b>Overall Risk Score </b> <code> 596.27/800 </code> </h3> 
+	     
+			<div class="progress">
+			  <div class="progress-bar progress-bar-danger" style="width: 35%">
+			    <span class="sr-only">35% Complete (success)</span>
+			  </div>
+			  <div class="progress-bar progress-bar-warning" style="width: 20%">
+			    <span class="sr-only">20% Complete (warning)</span>
+			  </div>
+			  <div class="progress-bar progress-bar-success" style="width: 3.46%">
+			    <span class="sr-only">10% Complete (danger)</span>
+			  </div>
+			</div>
+	     </div>
+	     <div class="panel-body" >
+	       <div class="row" >   
+ 
+			  	<div style="float: left;" id="gaugeContainer1"></div>
+ 
+			  	<div style="float: left;" id="gaugeContainer2"></div>
+ 
+			  	<div style="float: left;" id="gaugeContainer3"></div>
+
+	    	  	<div style="float: left;" id="gaugeContainer4"></div>
+
+	       </div>
+	     </div>
+     </div>
+     
+     </br>
+     
+     <div class="row">
+     	<div class="col-md-5" style="width: 400px">
+     		<div id='chartContainer' style="width:400px; height: 400px"/></div>
+     	</div>
+
+     	<div class="col-md-4" style="width: 400px">
+     		<div id='chartContainer2' style="width:400px; height: 400px"/></div>
+     	</div>
+     </div>		 
+     
+     <div class="row">
+     	<div class="col-md-10">
+     		<div id='chartContainer3' style="width:800px; height: 400px"/></div>
+     	</div>
+     </div>	     
+     
+  
+     
+     <div class="row">
+     	<div class="col-md-12">
+		    <div id='jqxtabs'>
+		        <ul style='margin-left: 20px;'>
+		            <li>Property & Equipment</li>
+		            <li>Workers Compensation</li>
+		            <li>Commercial Auto</li>
+		            <li>Financial</li>
+		            <li>3rd Party Ratings</li>
+		        </ul>
+		        <div>
+		            <ol>
+		            	<li>Score obtained - <code>140.8</code></li>
+		            	<li>Number of Insured Property - <code>3</code></li>
+		            	<li>Number of Insured Equipments - <code>20</code></li>
+		            </ol>
+		        </div>
+		        <div>
+		            <ol>
+		            	<li>Score obtained - <code>89.6</code></li>
+		            	<li>Total No. of Workers Insured - <code>22,200</code></li>
+		            </ol>
+		        </div>
+		        <div>
+		            <ol>
+		            	<li>Score obtained - <code>37.33</code></li>
+		            	<li>Annual Miles Clocked - <code>8,500,000</code></li>
+		            </ol>
+		        </div>
+		        <div>
+		            <ol>
+		            	<li>Score obtained - <code>144</code></li>
+		            	<li>Ownership Equity % - <code>Between 50-74</code></li>
+		            	<li>Current Ratios - <code>Between 1-2.9</code></li>
+		            </ol>
+		        </div>
+		        <div>
+		            <ol>
+		            	<li>Score obtained - <code>56</code></li>
+		            	<li>BBB Rating - <code>A</code></li>
+		            	<li>Paydex Rating - <code>60-80</code></li>
+		            </ol>
+		        </div>
+		    </div>  
+		 </div>      	
+     </div>
+     <br />
+	 <div class="row">
+	 	<div class="col-md-8" style="min-width: 800px">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Underwriter's Report</h3>
+			  </div>
+			  <div class="panel-body">
+		            <ol>
+		            	<li style="font-size: .9em">Max Probability of Loss exists for Category Commercial Auto</li>
+		            	<li style="font-size: .9em">Financial & 3rd Party Ratings are good</li>
+		            	<li style="font-size: .9em">As per sensor data, Raleigh location is prone to more Failures</li>
+		            	<li style="font-size: .9em">Max Incidents resulting in loss belongs to Workers Comp & Commercial Auto</li>
+		            </ol>
+			  </div>
+			</div>     		  	
+		</div>			 
+	 </div>   
+      <hr>
+
+      <footer>
+        <p>&copy; Time Travelers 2013</p>
+      </footer>
+    </div> <!-- /container -->      
+
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <!--<script src="js/main.js"></script>-->
+
+        <script>
+          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
